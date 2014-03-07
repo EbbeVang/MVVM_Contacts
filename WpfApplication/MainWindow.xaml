@@ -3,7 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="244" Margin="30,47,0,0" VerticalAlignment="Top" Width="182"/>
-
+        <ListBox ItemsSource="{Binding Contacts}" HorizontalAlignment="Left" Height="244" Margin="30,47,0,0" VerticalAlignment="Top" Width="182">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Firstname}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

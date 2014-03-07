@@ -34,5 +34,10 @@ namespace WpfApplication
                 if (value.Contains("@")) _email = value;
             }
         }
+        // one way of changing the way the object looks in listbox
+        //public override string ToString()
+        //{
+        //    return Firstname + " " + LastName;
+        //}
     }
 }
