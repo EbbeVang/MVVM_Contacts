@@ -55,6 +55,22 @@ namespace WpfApplication
             
         }
 
+        public void RemoveContact()
+        {
+            _contacts.Remove(_currentContact);
+            OnPropertyChanged("Contacts");
+        }
+
+        public void AddContact(String Firstname, string Lastname, String email)
+        {
+            ModelContact c = new ModelContact();
+            c.Firstname = Firstname;
+            c.LastName = Lastname;
+            c.email = email;
+            _contacts.Add(c);
+            OnPropertyChanged("Contacts");
+        }
+
         #region automatically added when implementing INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -77,6 +93,8 @@ namespace WpfApplication
                 new ModelContact(){Firstname = "Thomas", LastName = "Thomasson", email = "Thomas@Thomasson"},
                 new ModelContact(){Firstname = "Chris", LastName = "Christopherson", email = "Rubberduck@bandit.dk"}
             };
+
+            _currentContact = _contacts[0];
         }
 
     }
