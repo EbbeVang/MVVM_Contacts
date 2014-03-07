@@ -19,7 +19,7 @@ namespace WpfApplication
 
         // my variables
         private ModelContact _currentContact;
-        private List<ModelContact> _contacts = new List<ModelContact>(); 
+        private List<ModelContact> _contacts;
 
         // expose a contact to the UI
         public ModelContact CurrentContact
@@ -65,6 +65,19 @@ namespace WpfApplication
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+
+        // ok we cheat - time is runnning and we dont want to write a real data access layer
+        // we will generate contacts instead of using a DB
+        public ViewModelContact()
+        {
+            _contacts = new List<ModelContact>()
+            {
+                new ModelContact(){Firstname = "Ebbe", LastName = "Vang", email = "ebva@easj.dk"},
+                new ModelContact(){Firstname = "Mette", LastName = "Vang", email = "mette@vang.dk"},
+                new ModelContact(){Firstname = "Thomas", LastName = "Thomasson", email = "Thomas@Thomasson"},
+                new ModelContact(){Firstname = "Chris", LastName = "Christopherson", email = "Rubberduck@bandit.dk"}
+            };
+        }
 
     }
 }

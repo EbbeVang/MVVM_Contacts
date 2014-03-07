@@ -15,14 +15,21 @@ using System.Windows.Shapes;
 
 namespace WpfApplication
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        // my viewmodel
+        ViewModelContact viewModelContact = new ViewModelContact();
+
         public MainWindow()
         {
             InitializeComponent();
+            // the magic trick...
+            DataContext = viewModelContact;
         }
     }
 }
