@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using WpfApplication.Annotations;
 
 namespace WpfApplication
@@ -20,6 +21,7 @@ namespace WpfApplication
         // my variables
         private ModelContact _currentContact;
         private List<ModelContact> _contacts;
+        private ICommand _removeContactCommand;
 
         // expose a contact to the UI
         public ModelContact CurrentContact
@@ -55,9 +57,13 @@ namespace WpfApplication
             
         }
 
-        
-
-       
+        //expose remove contact command
+        public ICommand RemoveContact {
+            get
+            {
+                return _removeContactCommand;
+            }
+        }
 
         #region automatically added when implementing INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
@@ -83,6 +89,14 @@ namespace WpfApplication
             };
 
             _currentContact = _contacts[0];
+
+            _removeContactCommand = new RelayCommand(RemoveContactCommand){IsEnabled = true};
+        }
+
+        private void RemoveContactCommand()
+        {
+            _contacts.Remove(_currentContact);
+            OnPropertyChanged(_listOfContacts);
         }
 
     }

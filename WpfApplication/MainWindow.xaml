@@ -13,6 +13,7 @@
         <Label Content="{Binding CurrentContact.Firstname}" HorizontalAlignment="Left" Margin="280,47,0,0" VerticalAlignment="Top"/>
         <Label Content="{Binding CurrentContact.LastName}" HorizontalAlignment="Left" Margin="280,96,0,0" VerticalAlignment="Top"/>
         <Label Content="{Binding CurrentContact.email}" HorizontalAlignment="Left" Margin="280,124,0,0" VerticalAlignment="Top"/>
+        <Button Content="Remove Contact" Command="{Binding RemoveContact}" HorizontalAlignment="Left" Margin="360,257,0,0" VerticalAlignment="Top" Width="75"/>
 
 
     </Grid>
