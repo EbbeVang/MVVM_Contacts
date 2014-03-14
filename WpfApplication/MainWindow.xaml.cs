@@ -32,14 +32,5 @@ namespace WpfApplication
             DataContext = viewModelContact;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            viewModelContact.RemoveContact();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            viewModelContact.AddContact(BtnFirstName.Text, BtnLastName.Text, BtnEmail.Text);
-        }
     }
 }
