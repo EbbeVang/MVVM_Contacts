@@ -14,6 +14,17 @@
         <Label Content="{Binding CurrentContact.LastName}" HorizontalAlignment="Left" Margin="280,96,0,0" VerticalAlignment="Top"/>
         <Label Content="{Binding CurrentContact.email}" HorizontalAlignment="Left" Margin="280,124,0,0" VerticalAlignment="Top"/>
         <Button Content="Remove Contact" Command="{Binding RemoveContact}" HorizontalAlignment="Left" Margin="360,257,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListView ItemsSource="{Binding CurrentContact.PhoneNumbers}" HorizontalAlignment="Left" Height="100" Margin="280,304,0,0" VerticalAlignment="Top" Width="100">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Description}"></TextBlock>
+                        <TextBlock Text=": "></TextBlock>
+                        <TextBlock Text="{Binding Number}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
 
     </Grid>

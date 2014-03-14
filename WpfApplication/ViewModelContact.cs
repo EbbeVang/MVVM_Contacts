@@ -88,6 +88,20 @@ namespace WpfApplication
                 new ModelContact(){Firstname = "Chris", LastName = "Christopherson", email = "Rubberduck@bandit.dk"}
             };
 
+            Contacts[0].PhoneNumbers = new List<ModelPhoneNumber>()
+            {
+                new ModelPhoneNumber(){Description = "Home", Number = "12345678"},
+                new ModelPhoneNumber(){Description = "Work", Number = "23232323"}
+
+            };
+
+            Contacts[1].PhoneNumbers = new List<ModelPhoneNumber>()
+            {
+                new ModelPhoneNumber(){Description = "Work", Number = "58491221"},
+                new ModelPhoneNumber(){Description = "mobile", Number = "99999999"}
+            };
+
+
             _currentContact = _contacts[0];
 
             _removeContactCommand = new RelayCommand(RemoveContactCommand){IsEnabled = true};

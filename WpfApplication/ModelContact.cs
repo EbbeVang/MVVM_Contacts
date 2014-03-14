@@ -14,6 +14,19 @@ namespace WpfApplication
         private string _firstname;
         private string _lastname;
         private string _email;
+        private List<ModelPhoneNumber> _phoneNumbers;
+
+        public List<ModelPhoneNumber> PhoneNumbers
+        {
+            get
+            {
+                return _phoneNumbers;  
+            }
+            set
+            {
+                _phoneNumbers = value;
+            }
+        }
 
         public String Firstname 
         { 
@@ -26,6 +39,8 @@ namespace WpfApplication
             get { return _lastname; }
             set { _lastname = value; }
         }
+
+        
 
         public String email {
             get { return _email; }
